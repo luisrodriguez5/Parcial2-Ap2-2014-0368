@@ -16,5 +16,13 @@ namespace Entidades
         {
                 
         }
+
+        public Cuentas(int cuentaId, string nombre, Decimal balance)
+        {
+            this.CuentaId = cuentaId;
+            this.Nombre = nombre;
+            this.Balance = balance;
+
+        }
     }
 }

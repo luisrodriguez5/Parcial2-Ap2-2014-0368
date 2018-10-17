@@ -8,11 +8,11 @@ namespace DAL
 {
     public class Respository<TEntity> : IResporitory<TEntity> where TEntity : class
     {
-        ParcialDb1 Context = null;
+        ParcialDb Context = null;
 
         public Respository()
         {
-            Context = new ParcialDb1();
+            Context = new ParcialDb();
         }
 
         private DbSet<TEntity> EntitySet

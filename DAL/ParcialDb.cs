@@ -15,6 +15,7 @@ namespace DAL
 
         }
         public DbSet<Prestamos> Prestamos { get; set; }
-
+        public DbSet<Cuotas> Cuotas { get; set; }
+        public DbSet<Cuentas> Cuentas { get; set; }
     }
 }

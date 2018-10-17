@@ -22,6 +22,24 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI {
         protected global::System.Web.UI.WebControls.TextBox Id;
         
         /// <summary>
+        /// CuentaLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CuentaLabel;
+        
+        /// <summary>
+        /// CuentaDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CuentaDropDownList;
+        
+        /// <summary>
         /// NombreTextBox control.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,33 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI {
         protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
         
         /// <summary>
+        /// CuotaTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CuotaTextBox;
+        
+        /// <summary>
+        /// AlertGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel AlertGuardar;
+        
+        /// <summary>
+        /// MensajeGuardado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MensajeGuardado;
+        
+        /// <summary>
         /// BtnNuevo control.
         /// </summary>
         /// <remarks>
@@ -58,13 +103,13 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI {
         protected global::System.Web.UI.WebControls.Button BtnNuevo;
         
         /// <summary>
-        /// Button1 control.
+        /// BtnGuardar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BtnGuardar;
         
         /// <summary>
         /// Button2 control.
