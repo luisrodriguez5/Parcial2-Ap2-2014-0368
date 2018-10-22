@@ -11,6 +11,7 @@
                     <asp:TextBox ID="Id" runat="server" Class="form-control col-2"></asp:TextBox>
 
                 </div>
+
                 <div class="form-group row">
                     <label for="Nombre" class="col-2">Nombre:</label>
                     <asp:TextBox ID="NombreTextBox" runat="server" Class="form-control col-6"></asp:TextBox>
@@ -22,10 +23,18 @@
                     <asp:TextBox ID="MontoTextBox" runat="server" Class="form-control col-6"></asp:TextBox>
                 </div>
 
+                <div class="form-group">
+                    <div class="col-7 ml-md-auto">
+                        <asp:Panel ID="AlertGuardar" Class="form-control alert-success text-center" runat="server" role="alert">
+                            <asp:Label ID="MensajeGuardado" runat="server">!Se Guardo Con Exito! </asp:Label>
+                        </asp:Panel>
+                    </div>
+                </div>
+
                 <div class="form-group row">
                     <div class="col-lg-12">
                         <div class="col-10 ml-md-auto">
-                            <asp:Button ID="BtnNuevo" runat="server" class="btn btn-primary" Text="Nuevo" />
+                            <asp:Button ID="BtnNuevo" runat="server" class="btn btn-primary" Text="Nuevo" OnClick="BtnNuevo_Click" />
                             <asp:Button ID="BtnGuardar" runat="server" class="btn btn-primary" Text="Guardar" OnClick="BtnGuardar_Click" />
                             <asp:Button ID="Button2" runat="server" class="btn btn-primary" Text="Eliminar" />
                         </div>

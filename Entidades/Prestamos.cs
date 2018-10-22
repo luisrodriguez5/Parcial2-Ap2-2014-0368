@@ -15,7 +15,7 @@ namespace Entidades
         public string Direccion { get; set; }
         public Decimal Monto { get; set; }
         public int NoCuotas { get; set; }
-        public Cuotas CoutasId { get; set; }
+        public int CoutaId { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaSaldo { get; set; }
 

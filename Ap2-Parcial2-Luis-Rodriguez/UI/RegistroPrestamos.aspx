@@ -7,15 +7,25 @@
         <div class="row">
             <div class="col-10">
                 <div class="form-row">
-                    <div class="form-group col-md-6 ">
+
+                    <div class="form-group col-md-3 ">
                         <label for="PrestamoId" class="col-form-label">Id:</label>
                         <asp:TextBox ID="Id" runat="server" Class="form-control"></asp:TextBox>
+
+
                     </div>
-      
+                    <div class="form-group col-md-3 ">
+                        <label for="PrestamoId" class="col-form-label">Id:</label>
+                      
+
+
+                    </div>
+
                     <div class="form-group col-md-6 ">
                         <br />
                         <asp:Label ID="CuentaLabel" runat="server" Text="Cuenta:"></asp:Label>
                         <asp:DropDownList CssClass="form-control" ID="CuentaDropDownList" runat="server"></asp:DropDownList>
+
                     </div>
                 </div>
                 <div class="form-row">
@@ -27,6 +37,18 @@
                     <div class="form-group col-md-6 ">
                         <label for="Direccion">Direccion:</label>
                         <asp:TextBox ID="DireccionTextBox" runat="server" Class="form-control"></asp:TextBox>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="Interes">Interes Anual:</label>
+                        <asp:TextBox ID="InteresTextBox" runat="server" Class="form-control "></asp:TextBox>
+                    </div>
+
+                    <div class="form-group col-md-6 ">
+                        <label for="Fecha">Fecha:</label>
+                        <asp:TextBox type="date" CssClass="form-control" ID="FechaTextBox" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-row">
@@ -58,6 +80,7 @@
                     </div>
 
                 </div>
+
             </div>
         </div>
     </section>

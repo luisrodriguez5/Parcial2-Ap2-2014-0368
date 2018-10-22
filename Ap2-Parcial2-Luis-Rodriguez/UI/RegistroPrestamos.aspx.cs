@@ -15,9 +15,18 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
         private Prestamos prestamos = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            prestamos = new Prestamos();
+
+            if (!Page.IsPostBack)
+            {
+                LlenarCuentas();
+            }
+
+
             AlertGuardar.Visible = false;
 
         }
+
 
         private void Limpiar()
         {
@@ -37,8 +46,37 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
             MontoTextBox.Text = prestamos.Monto.ToString();
             NombreTextBox.Text = prestamos.Nombre;
             CuotaTextBox.Text = prestamos.NoCuotas.ToString();
-           
+            FechaTextBox.Text = prestamos.FechaInicio.ToString("yyyy-MM-dd");
+            CuentaDropDownList.Text = prestamos.CoutaId.ToString();
+
+
         }
+
+        private Prestamos LlenarInstanciaPrestamos()
+        {
+            //producto.ProductoId = Utilidades.TOINT(ProductoIdTextBox.Text);
+            prestamos.Direccion = DireccionTextBox.Text;
+            prestamos.Nombre = NombreTextBox.Text;
+            prestamos.Monto = Utilidades.TOINT(MontoTextBox.Text);
+
+            prestamos.FechaInicio = Convert.ToDateTime(FechaTextBox.Text);
+            prestamos.CoutaId = Utilidades.TOINT(CuentaDropDownList.SelectedValue);
+
+            return prestamos;
+        }
+
+
+        private void LlenarCuentas()
+        {
+            List<Cuentas> Lista = CuentasBLL.GetListAll();
+
+            CuentaDropDownList.DataSource = Lista;
+            CuentaDropDownList.DataValueField = "CuentaId";
+            CuentaDropDownList.DataTextField = "Nombre";
+            CuentaDropDownList.DataBind();
+
+        }
+
         private void BuscarPrestamo()
         {
 
@@ -51,11 +89,36 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
             {
 
                 DatosPrestamo();
+
             }
 
         }
 
+        private bool VerificarExistenciaPrestamos()
+        {
+            if (string.IsNullOrEmpty(Id.Text))
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Digite el id del Prestamo');", addScriptTags: true);
+            }
+            else
+            {
+                int id = Utilidades.TOINT(Id.Text);
 
+                prestamos = PrestamosBLL.Buscar(p => p.PrestamoId == id);
+
+                if (prestamos != null)
+                {
+
+                    return true;
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe Prestamos con ese id');", addScriptTags: true);
+                }
+            }
+
+            return false;
+        }
         private void LlenarCamposInstancia()
         {
             int id = 0;
@@ -63,7 +126,7 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
             {
                 id = Utilidades.TOINT(Id.Text);
             }
-            prestamos = new Prestamos(id, NombreTextBox.Text, DireccionTextBox.Text, Utilidades.TODECIMAL(MontoTextBox.Text),Utilidades.TOINT(CuotaTextBox.Text));
+            prestamos = new Prestamos(id, NombreTextBox.Text, DireccionTextBox.Text, Utilidades.TODECIMAL(MontoTextBox.Text), Utilidades.TOINT(CuotaTextBox.Text));
         }
 
 
@@ -115,14 +178,14 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
         {
             int id = Utilidades.TOINT(Id.Text);
 
-            
-            
-                if (PrestamosBLL.Eliminar(PrestamosBLL.Buscar(p => p.PrestamoId == id)))
-                {
-                    Limpiar();
 
-                }
-            
+
+            if (PrestamosBLL.Eliminar(PrestamosBLL.Buscar(p => p.PrestamoId == id)))
+            {
+                Limpiar();
+
+            }
+
         }
     }
 }

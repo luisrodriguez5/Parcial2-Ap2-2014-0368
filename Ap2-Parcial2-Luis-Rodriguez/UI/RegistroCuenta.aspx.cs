@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using BLL;
+using Entidades;
 using SistemaTech;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            AlertGuardar.Visible = false;
 
         }
 
@@ -26,6 +28,11 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
             MontoTextBox.Text = "";
 
         }
+
+
+
+
+
         private void LlenarCamposInstancia()
         {
             int id = 0;
@@ -34,6 +41,22 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
                 id = Utilidades.TOINT(Id.Text);
             }
             cuentas = new Cuentas(id, NombreTextBox.Text, Utilidades.TODECIMAL(MontoTextBox.Text));
+        }
+
+        private bool Validar()
+        {
+            bool interutor = true;
+            if (string.IsNullOrWhiteSpace(NombreTextBox.Text))
+            {
+                interutor = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(MontoTextBox.Text))
+            {
+                interutor = false;
+            }
+
+            return interutor;
         }
 
         private void DatosCuenta()
@@ -46,6 +69,19 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
 
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                LlenarCamposInstancia();
+                if (CuentasBLL.Guardar(cuentas))
+                {
+                    Id.Text = cuentas.CuentaId.ToString();
+                    AlertGuardar.Visible = true;
+                }
+            }
+        }
+
+        protected void BtnNuevo_Click(object sender, EventArgs e)
         {
 
         }

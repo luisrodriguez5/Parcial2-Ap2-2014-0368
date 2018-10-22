@@ -40,6 +40,24 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI {
         protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
         
         /// <summary>
+        /// AlertGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel AlertGuardar;
+        
+        /// <summary>
+        /// MensajeGuardado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MensajeGuardado;
+        
+        /// <summary>
         /// BtnNuevo control.
         /// </summary>
         /// <remarks>

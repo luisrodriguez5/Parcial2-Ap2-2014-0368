@@ -11,36 +11,20 @@ namespace BLL
 {
     public class CuentasBLL
     {
-        public static bool Guardar(Cuentas cuentas)
+        public static bool Guardar(Cuentas cuenta)
         {
             using (var context = new Respository<Cuentas>())
             {
                 try
                 {
-                    if (Buscar(p => p.CuentaId == cuentas.CuentaId) == null)
+                    if (Buscar(p => p.CuentaId == cuenta.CuentaId) == null)
                     {
-                        return context.Guardar(cuentas);
+                        return context.Guardar(cuenta);
                     }
                     else
                     {
-                        return context.Modificar(cuentas);
+                        return context.Modificar(cuenta);
                     }
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
-        }
-
-        public static Cuentas Buscar(Expression<Func<Cuentas, bool>> criterio)
-        {
-            using (var context = new Respository<Cuentas>())
-            {
-                try
-                {
-                    return context.Buscar(criterio);
                 }
                 catch (Exception)
                 {
@@ -66,13 +50,13 @@ namespace BLL
             }
         }
 
-        public static List<Cuentas> GetListAll()
+        public static bool Modificar(Cuentas cuenta)
         {
             using (var context = new Respository<Cuentas>())
             {
                 try
                 {
-                    return context.GetListAll();
+                    return context.Modificar(cuenta);
                 }
                 catch (Exception)
                 {
@@ -89,6 +73,39 @@ namespace BLL
                 try
                 {
                     return context.GetList(criterio);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+
+        public static List<Cuentas> GetListAll()
+        {
+            using (var context = new Respository<Cuentas>())
+            {
+                try
+                {
+                    return context.GetListAll();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static Cuentas Buscar(Expression<Func<Cuentas, bool>> criterio)
+        {
+            using (var context = new Respository<Cuentas>())
+            {
+                try
+                {
+                    return context.Buscar(criterio);
                 }
                 catch (Exception)
                 {
