@@ -40,7 +40,7 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
             {
                 id = Utilidades.TOINT(Id.Text);
             }
-            cuentas = new Cuentas(id, NombreTextBox.Text, Utilidades.TODECIMAL(MontoTextBox.Text));
+            cuentas = new Cuentas(id, NombreTextBox.Text, Utilidades.TODECIMAL(MontoTextBox.Text), Convert.ToDateTime(FechaTextBox.Text));
         }
 
         private bool Validar()
@@ -64,6 +64,7 @@ namespace Ap2_Parcial2_Luis_Rodriguez.UI
             Id.Text = cuentas.CuentaId.ToString();
             NombreTextBox.Text = cuentas.Nombre;
             MontoTextBox.Text = cuentas.Balance.ToString();
+            FechaTextBox.Text = cuentas.Fecha.ToString("yyyy-MM-dd");
 
         }
 

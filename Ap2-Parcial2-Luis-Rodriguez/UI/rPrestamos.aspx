@@ -6,31 +6,20 @@
     <section class="container mt-5 pt-5">
         <div class="row">
             <div class="col-6">
-                <div class="form-group row">
-                    <label for="Id" class="col-2 col-form-label">Id:</label>
-                    <asp:TextBox ID="Id" runat="server" Class="form-control col-2"></asp:TextBox>
-
-                </div>
-                <div class="form-group row">
-                    <label for="Nombre" class="col-2">Nombre:</label>
-                    <asp:TextBox ID="NombreTextBox" runat="server" Class="form-control col-6"></asp:TextBox>
-                </div>
-
-
-                <div class="form-group row">
-                    <label for="Balance" class="col-2">Monto:</label>
-                    <asp:TextBox ID="MontoTextBox" runat="server" Class="form-control col-6"></asp:TextBox>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-lg-12">
-                        <div class="col-10 ml-md-auto">
-                            <asp:Button ID="BtnNuevo" runat="server" class="btn btn-primary" Text="Nuevo" />
-                            <asp:Button ID="BtnGuardar" runat="server" class="btn btn-primary" Text="Guardar" />
-                            <asp:Button ID="Button2" runat="server" class="btn btn-primary" Text="Eliminar" />
-                        </div>
-                    </div>
-                </div>
+               <h1>Tabla de amortizacion</h1>
+                <table class="table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Couta</th>
+                            <th>Interes Mensual</th>
+                            <th>Amortizacion Principal</th>
+                            <th>Amortizacion Total</th>
+                            <th>Capital Pediente</th>
+                        </tr>
+                    </thead>
+                    
+                </table>
             </div>
         </div>
     </section>

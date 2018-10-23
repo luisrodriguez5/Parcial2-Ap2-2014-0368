@@ -23,6 +23,12 @@
                     <asp:TextBox ID="MontoTextBox" runat="server" Class="form-control col-6"></asp:TextBox>
                 </div>
 
+                
+                <div class="form-group row">
+                    <label for="Fecha" class="col-2">Fecha:</label>
+                  <asp:TextBox type="date" CssClass="form-control col-6" ID="FechaTextBox" runat="server"></asp:TextBox>
+                </div>
+
                 <div class="form-group">
                     <div class="col-7 ml-md-auto">
                         <asp:Panel ID="AlertGuardar" Class="form-control alert-success text-center" runat="server" role="alert">

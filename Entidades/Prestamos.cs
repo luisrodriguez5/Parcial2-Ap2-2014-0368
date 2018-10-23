@@ -15,22 +15,27 @@ namespace Entidades
         public string Direccion { get; set; }
         public Decimal Monto { get; set; }
         public int NoCuotas { get; set; }
-        public int CoutaId { get; set; }
+        public int CuentaId { get; set; }
+        public Decimal Coutas { get; set; }
         public DateTime FechaInicio { get; set; }
-        public DateTime FechaSaldo { get; set; }
+        public Decimal IntereSAnual { get; set; }
+        public virtual Cuentas Cuentas { get; set; }
+
 
 
         public Prestamos()
         {
 
         }
-        public Prestamos(int prestamoid, string nombre, string direccion, Decimal Monto, int noCuotas)
+        public Prestamos(int prestamoid, string nombre, string direccion, Decimal monto, int noCuotas, DateTime fecha, int cuentaId)
         {
             this.PrestamoId = prestamoid;
             this.Nombre = nombre;
             this.Direccion = direccion;
-            this.Monto = Monto;
+            this.Monto = monto;
             this.NoCuotas = noCuotas;
+            this.FechaInicio = fecha;
+            this.CuentaId = cuentaId;
 
         }
     }
